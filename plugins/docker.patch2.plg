@@ -6,7 +6,7 @@
 <!ENTITY github "Squidly271/docker.patch2">
 <!ENTITY pluginURL "https://raw.githubusercontent.com/Squidly271/docker.patch2/main/plugins/docker.patch2.plg">
 ]>
-<PLUGIN name="&name;" author="&author;" version="&version;" pluginURL="&pluginURL;" icon="bug" min="6.12.8" max="6.12.8" support="https://forums.unraid.net/topic/134016-fix-to-a-small-issue-with-updating-oci-docker-images/">
+<PLUGIN name="&name;" author="&author;" version="&version;" pluginURL="&pluginURL;" icon="bug" min="6.12.8" max="6.12.8" support="https://forums.unraid.net/topic/154107-plugin-docker-patch-6128/">
   <CHANGES>
 ###2024.02.17
 - Initial Release
