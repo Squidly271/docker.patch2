@@ -1,0 +1,39 @@
+<?xml version="1.0" standalone="yes"?>
+<!DOCTYPE PLUGIN [
+<!ENTITY name "docker.patch2">
+<!ENTITY author "Andrew Zawadzki">
+<!ENTITY version "2024.02.17">
+<!ENTITY github "Squidly271/docker.patch2">
+<!ENTITY pluginURL "https://raw.githubusercontent.com/Squidly271/docker.patch2/main/plugins/docker.patch2.plg">
+]>
+<PLUGIN name="&name;" author="&author;" version="&version;" pluginURL="&pluginURL;" icon="bug" min="6.12.8" max="6.12.8" support="https://forums.unraid.net/topic/134016-fix-to-a-small-issue-with-updating-oci-docker-images/">
+  <CHANGES>
+###2024.02.17
+- Initial Release
+</CHANGES>
+
+<FILE Run="/bin/bash">
+<INLINE>
+
+echo "Patching Docker Helpers"
+sed -i '273i if ( ! trim($hostConfig) || ! trim($containerConfig) ) continue;' /usr/local/emhttp/plugins/dynamix.docker.manager/include/Helpers.php
+
+echo "----------------------------------------------------"
+echo " &name; has been installed."
+echo " Copyright 2024, Andrew Zawadzki"
+echo " Version: &version;"
+echo "----------------------------------------------------"
+echo ""
+</INLINE>
+  </FILE>
+  <!--
+The 'remove' script.
+-->
+  <FILE Run="/bin/bash" Method="remove">
+    <INLINE>
+		echo ""
+echo "You must reboot for the changes to take effect"
+echo ""
+</INLINE>
+  </FILE>
+</PLUGIN>
